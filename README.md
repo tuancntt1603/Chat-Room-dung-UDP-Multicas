@@ -26,9 +26,29 @@ Học phần trang bị cho người học những kiến thức nền tảng c�
 ## 🔧 2. Ngôn ngữ lập trình sử dụng: [![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
 
 ## 🚀 3. Các project đã thực hiện
+```
 multicast_chat_gui/
 ├── src/
-│ └── chat/
-│ ├── MulticastChatGUI.java // Main + GUI
-│ ├── Sender.java // Xử lý gửi tin nhắn
-│ └── Receiver.java // Xử lý nhận tin nhắn
+│   └── chat/
+│       ├── MulticastChatGUI.java   // Main + GUI
+│       ├── Sender.java             // Xử lý gửi tin nhắn
+│       └── Receiver.java           // Xử lý nhận tin nhắn
+```
+## Cách chạy
+ -Biên dịch code:
+   ```bash
+   javac -d bin src/chat/*.java
+   ```
+-Chạy chương trình:
+   ```bash
+   java -cp bin chat.MulticastChatGUI
+   ```
+-Mở nhiều cửa sổ  để tham gia chat room
+3. Hình ảnh các chức năng
+<p align="center">
+  <img src=""C:\Users\Admin\Pictures\Screenshots\Ảnh chụp màn hình 2025-09-11 161448.png"" alt="Ảnh 1" width="800"/>
+</p>
+
+<p align="center">
+  <em>Hình 1: Ảnh giao diện chat giữa Client-Server  Hình 2: Ảnh 2 Client chat với Server</em>
+</p>
