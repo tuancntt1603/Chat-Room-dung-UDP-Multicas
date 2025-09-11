@@ -43,5 +43,6 @@ multicast_chat_gui/
    java -cp bin chat.MulticastChatGUI
    ```
 -Mở nhiều cửa sổ  để tham gia chat room
+
 3. Hình ảnh các chức năng
 
