@@ -45,10 +45,4 @@ multicast_chat_gui/
    ```
 -Mở nhiều cửa sổ  để tham gia chat room
 3. Hình ảnh các chức năng
-<p align="center">
-  <img src=""C:\Users\Admin\Pictures\Screenshots\Ảnh chụp màn hình 2025-09-11 161448.png"" alt="Ảnh 1" width="800"/>
-</p>
-
-<p align="center">
-  <em>Hình 1: Ảnh giao diện chat giữa Client-Server  Hình 2: Ảnh 2 Client chat với Server</em>
-</p>
+"C:\Users\Admin\Pictures\Screenshots\Ảnh chụp màn hình 2025-09-11 161448.png"
