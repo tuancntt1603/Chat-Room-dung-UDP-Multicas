@@ -22,9 +22,43 @@
 ---
 ## 📖 1. Giới thiệu
 Học phần trang bị cho người học những kiến thức nền tảng của lập trình mạng và các kỹ năng cần thiết để thiết kế và cài đặt các ứng dụng mạng và các chuẩn ở mức ứng dụng dựa trên mô hình Client/Server, có sử dụng các giao tiếp chương trình dựa trên Sockets. Kết thúc học phần, sinh viên có thể viết các chương trình ứng dụng mạng với giao thức tầng ứng dụng tự thiết kế.
-## 🔧 2. Ngôn ngữ lập trình sử dụng: [![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
+## 🔧 2. Công nghệ và ngôn ngữ lập trình sử dụng
+🔹 Ngôn ngữ lập trình sử dụng
 
-## 🚀 3. Các project đã thực hiện
+Java
+
+Dùng Java SE (Standard Edition), phiên bản phổ biến (Java 8 trở lên).
+
+Thư viện sử dụng:
+
+java.net.* (UDP, DatagramSocket, MulticastSocket, InetAddress).
+
+javax.swing.* (tạo giao diện đồ họa).
+
+java.awt.* (hỗ trợ bố cục giao diện).
+
+🔹 Môi trường lập trình
+
+IDE: Eclipse IDE (Eclipse IDE for Java Developers).
+
+Hệ điều hành: Windows.
+
+JDK: JDK 17
+
+Project Type: Java Project (trong Eclipse).
+## 🚀 3. Hình ảnh các chức năng
+<p align="center">
+  <img width="679" height="461" alt="Hình 1. Giao diện ứng dụng Chat Room sử dụng UDP Multicast" src="https://github.com/user-attachments/assets/6819595d-e265-426b-bbc9-4ae5e4c87b93" />
+</p>
+<p align="center"><b>Hình 1.</b> Giao diện ứng dụng Chat Room sử dụng UDP Multicast</p>
+
+<p align="center">
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/99f9e2f0-e367-4436-9f13-703ec124faa3" />
+</p>
+<p align="center"><b>Hình 2.</b>  Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
+
+
+## 🚀 4. Các project đã thực hiện
 ```
 multicast_chat_gui/
 ├── src/
@@ -43,14 +77,11 @@ multicast_chat_gui/
    java -cp bin chat.MulticastChatGUI
    ```
 -Mở nhiều cửa sổ  để tham gia chat room
+## Thông tin cá nhân
+**Họ tên**: Bùi Anh Tuấn.  
+**Lớp**: CNTT 16-03.  
+**Email**: gaytongteo2004@gmail.com.
 
-3. Hình ảnh các chức năng
-<p align="center">
-  <img width="679" height="461" alt="Hình 1. Giao diện ứng dụng Chat Room sử dụng UDP Multicast" src="https://github.com/user-attachments/assets/6819595d-e265-426b-bbc9-4ae5e4c87b93" />
-</p>
-<p align="center"><b>Hình 1.</b> Giao diện ứng dụng Chat Room sử dụng UDP Multicast</p>
+© 2025 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 
-<p align="center">
-  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/99f9e2f0-e367-4436-9f13-703ec124faa3" />
-</p>
-<p align="center"><b>Hình 2.</b>  Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
+---
