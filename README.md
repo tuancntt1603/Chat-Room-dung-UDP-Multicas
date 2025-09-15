@@ -45,8 +45,4 @@ multicast_chat_gui/
 -Mở nhiều cửa sổ  để tham gia chat room
 
 3. Hình ảnh các chức năng
-Giao diện chương trình
-![Giao diện Chat Room](Ảnh chụp màn hình 2025-09-11 161448.png)
 
-### Nhiều người cùng chat
-![Nhiều cửa sổ Chat Room](Ảnh chụp màn hình 2025-09-11 163722.png)
