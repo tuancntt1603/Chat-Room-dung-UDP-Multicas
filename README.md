@@ -45,4 +45,12 @@ multicast_chat_gui/
 -Mở nhiều cửa sổ  để tham gia chat room
 
 3. Hình ảnh các chức năng
+<p align="center">
+  <img width="679" height="461" alt="Hình 1. Giao diện ứng dụng Chat Room sử dụng UDP Multicast" src="https://github.com/user-attachments/assets/6819595d-e265-426b-bbc9-4ae5e4c87b93" />
+</p>
+<p align="center"><b>Hình 1.</b> Giao diện ứng dụng Chat Room sử dụng UDP Multicast</p>
 
+<p align="center">
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/99f9e2f0-e367-4436-9f13-703ec124faa3" />
+</p>
+<p align="center"><b>Hình 2.</b>  Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
