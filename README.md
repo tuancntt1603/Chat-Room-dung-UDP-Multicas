@@ -58,25 +58,13 @@ Project Type: Java Project (trong Eclipse).
 <p align="center"><b>Hình 2.</b>  Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
 
 
-## 🚀 4. Các project đã thực hiện
-```
-multicast_chat_gui/
-├── src/
-│   └── chat/
-│       ├── MulticastChatGUI.java   // Main + GUI
-│       ├── Sender.java             // Xử lý gửi tin nhắn
-│       └── Receiver.java           // Xử lý nhận tin nhắn
-```
-## Cách chạy
- -Biên dịch code:
-   ```bash
-   javac -d bin src/chat/*.java
-   ```
--Chạy chương trình:
-   ```bash
-   java -cp bin chat.MulticastChatGUI
-   ```
--Mở nhiều cửa sổ  để tham gia chat room
+## 4. Các bước cài đặt
+1. **Cài đặt môi trường**  
+   - JDK 8 trở lên  
+   - MySQL 5.7+ hoặc 8.0+  
+   - IDE khuyến nghị: IntelliJ IDEA / Eclipse / NetBeans  
+
+
 ## Thông tin cá nhân
 **Họ tên**: Bùi Anh Tuấn.  
 **Lớp**: CNTT 16-03.  
