@@ -1,9 +1,12 @@
 package chat;
 
 import javax.swing.*;
+import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.net.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class MulticastChatGUI {
@@ -11,7 +14,7 @@ public class MulticastChatGUI {
     private static final int DEFAULT_PORT = 4446;
 
     private JFrame frame;
-    private JTextArea chatArea;
+    private JTextPane chatArea;
     private JTextField messageField;
     private JButton sendBtn, joinBtn, leaveBtn;
     private JList<String> userList;
@@ -25,6 +28,9 @@ public class MulticastChatGUI {
 
     private String username;
 
+    // Định dạng thời gian
+    private SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+
     public MulticastChatGUI() {
         initUI();
     }
@@ -35,7 +41,7 @@ public class MulticastChatGUI {
         frame.setLayout(new BorderLayout(8, 8));
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
-        // Top panel (cấu hình)
+        // Top panel (config)
         JPanel top = new JPanel(new FlowLayout());
         JTextField txtGroup = new JTextField(DEFAULT_GROUP, 12);
         JTextField txtPort = new JTextField(String.valueOf(DEFAULT_PORT), 6);
@@ -45,8 +51,9 @@ public class MulticastChatGUI {
         top.add(new JLabel("Name:"));  top.add(txtName);
         frame.add(top, BorderLayout.NORTH);
 
-        // Chat area
-        chatArea = new JTextArea(); chatArea.setEditable(false);
+        // Chat area (dùng JTextPane để hỗ trợ màu)
+        chatArea = new JTextPane();
+        chatArea.setEditable(false);
         JScrollPane chatScroll = new JScrollPane(chatArea);
 
         // User list
@@ -107,7 +114,11 @@ public class MulticastChatGUI {
     private void sendMsg() {
         String text = messageField.getText().trim();
         if(text.isEmpty()) return;
-        String full = username + ": " + text;
+
+        // Thêm timestamp vào tin nhắn
+        String time = "[" + timeFormat.format(new Date()) + "] ";
+        String full = time + username + ": " + text;
+
         if(sender != null) sendQueue.offer(full);
         messageField.setText("");
     }
@@ -118,9 +129,25 @@ public class MulticastChatGUI {
         socket.joinGroup(group);
 
         receiver = new Receiver(socket, msg -> {
-            chatArea.append(msg + "\n");
-            if(msg.startsWith("[JOIN] ")) userListModel.addElement(msg.substring(7));
-            else if(msg.startsWith("[LEAVE] ")) userListModel.removeElement(msg.substring(8));
+            SwingUtilities.invokeLater(() -> {
+                if(msg.startsWith("[JOIN] ")) {
+                    String user = msg.substring(7);
+                    if(!userListModel.contains(user)) {
+                        userListModel.addElement(user);
+                    }
+                    appendMessage("[" + timeFormat.format(new Date()) + "] " + "[SYSTEM] " + user + " đã tham gia nhóm\n", Color.BLUE);
+                } else if(msg.startsWith("[LEAVE] ")) {
+                    String user = msg.substring(8);
+                    userListModel.removeElement(user);
+                    appendMessage("[" + timeFormat.format(new Date()) + "] " + "[SYSTEM] " + user + " đã rời nhóm\n", Color.RED);
+                } else {
+                    if(msg.contains(username + ":")) {
+                        appendMessage(msg + "\n", new Color(0,128,0)); // Xanh lá cho mình
+                    } else {
+                        appendMessage(msg + "\n", Color.BLACK); // Đen cho người khác
+                    }
+                }
+            });
         });
         receiver.start();
 
@@ -128,7 +155,7 @@ public class MulticastChatGUI {
         sender.start();
 
         sendQueue.offer("[JOIN] " + username);
-        chatArea.append("[SYSTEM] Joined " + gAddr + ":" + port + "\n");
+        appendMessage("[" + timeFormat.format(new Date()) + "] [SYSTEM] Joined " + gAddr + ":" + port + "\n", Color.MAGENTA);
 
         joinBtn.setEnabled(false); leaveBtn.setEnabled(true);
     }
@@ -145,6 +172,17 @@ public class MulticastChatGUI {
         try { if(socket!=null) socket.close(); } catch(Exception ignored){}
         frame.dispose();
         System.exit(0);
+    }
+
+    // Thêm hàm hỗ trợ màu
+    private void appendMessage(String msg, Color c) {
+        StyledDocument doc = chatArea.getStyledDocument();
+        Style style = chatArea.addStyle("Style", null);
+        StyleConstants.setForeground(style, c);
+        try {
+            doc.insertString(doc.getLength(), msg, style);
+            chatArea.setCaretPosition(doc.getLength()); // Tự động cuộn xuống
+        } catch (BadLocationException ignored) {}
     }
 
     public static void main(String[] args) {
