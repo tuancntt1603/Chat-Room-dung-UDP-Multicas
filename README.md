@@ -59,10 +59,13 @@ Project Type: Java Project (trong Eclipse).
 
 
 ## 4. Các bước cài đặt
-1. **Cài đặt môi trường**  
-   - JDK 8 trở lên  
-   - MySQL 5.7+ hoặc 8.0+  
-   - IDE khuyến nghị: IntelliJ IDEA / Eclipse / NetBeans  
+### 🔧 Yêu cầu hệ thống
+
+- **Java Development Kit (JDK)**: Phiên bản 8 trở lên
+- **Hệ điều hành**: Windows, macOS, hoặc Linux
+- **Môi trường phát triển**: IDE (IntelliJ IDEA, Eclipse, VS Code) hoặc terminal/command prompt
+- **Bộ nhớ**: Tối thiểu 512MB RAM
+- **Dung lượng**: Khoảng 10MB cho mã nguồn và file thực thi
 
 
 ## Thông tin cá nhân
