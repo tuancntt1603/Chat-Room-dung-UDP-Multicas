@@ -47,15 +47,26 @@ JDK: JDK 17
 
 Project Type: Java Project (trong Eclipse).
 ## 🚀 3. Hình ảnh các chức năng
-<p align="center">
-  <img width="679" height="461" alt="Hình 1. Giao diện ứng dụng Chat Room sử dụng UDP Multicast" src="https://github.com/user-attachments/assets/6819595d-e265-426b-bbc9-4ae5e4c87b93" />
+
+
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/217caf09-8829-425b-b1db-02877a5dd43f" />
 </p>
-<p align="center"><b>Hình 1.</b> Giao diện ứng dụng Chat Room sử dụng UDP Multicast</p>
+<p align="center"><b>Hình 1.</b> Giao diện phòng chat sử dụng UDP Multicast.</p>
 
 <p align="center">
-  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/99f9e2f0-e367-4436-9f13-703ec124faa3" />
+<p align="center">
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/f4b42850-7144-4214-95f6-3aa8f0898b3b" />
 </p>
-<p align="center"><b>Hình 2.</b>  Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
+<p align="center"><b>Hình 2.</b>Các user tham gia phòng chat sử dụng UDP Multicast.</p>
+<p align="center">
+<p align="center">
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/0faad44b-6d14-491f-8b29-74975bdbd0b5" />
+</p>
+<p align="center"><b>Hình 3.</b> Các cửa sổ chat của nhiều client kết nối cùng một phòng chat sử dụng UDP Multicast.</p>
+<p align="center">
+  <img width="800" height="550" alt="Hình . Cấu trúc thư mục project multicast_chat_gui trên Visual Studio Code" src="https://github.com/user-attachments/assets/5dc017e8-12c0-4a4e-b368-f295075cb730" />
+</p>
+<p align="center"><b>Hình 4.</b> Các user rời khỏi phòng chat sử dụng UDP Multicast.</p>
 
 
 ## 4. Các bước cài đặt
