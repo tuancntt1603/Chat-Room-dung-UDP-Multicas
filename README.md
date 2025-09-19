@@ -77,8 +77,39 @@ Project Type: Java Project (trong Eclipse).
 - **Môi trường phát triển**: IDE (IntelliJ IDEA, Eclipse, VS Code) hoặc terminal/command prompt
 - **Bộ nhớ**: Tối thiểu 512MB RAM
 - **Dung lượng**: Khoảng 10MB cho mã nguồn và file thực thi
+### 📦 Cài đặt và triển khai
 
+#### Bước 1: Chuẩn bị môi trường
+1. **Kiểm tra Java**: Mở terminal/command prompt và chạy:
+   ```bash
+   java -version
+   javac -version
+   ```
+   Đảm bảo cả hai lệnh đều hiển thị phiên bản Java 8 trở lên.
+#### Bước 2: Biên dịch mã nguồn
+1. **Mở terminal** và điều hướng đến thư mục chứa mã nguồn
+2. **Biên dịch các file Java**:
+   ```bash
+   javac MulticastChatGUI.java
+   ```
+#### Bước 3: Chạy ứng dụng
+**Khởi động chương trình**:
+```bash
+java MulticastChatGUI
+```
 
+- Một cửa sổ giao diện chat sẽ hiển thị.  
+- Có thể mở **nhiều cửa sổ** trên cùng một máy, hoặc chạy trên **nhiều máy trong cùng mạng LAN**.  
+
+---
+
+### 🚀 Sử dụng ứng dụng
+1. **Tham gia phòng chat**: Nhập tên người dùng khi giao diện yêu cầu.  
+2. **Gửi tin nhắn**: Gõ tin nhắn vào ô nhập → nhấn Enter hoặc nút **Gửi**.  
+3. **Nhận tin nhắn**: Tất cả các client trong cùng nhóm multicast sẽ nhận được.  
+4. **Thoát**: Đóng cửa sổ để ngắt kết nối khỏi phòng chat.  
+
+---
 ## Thông tin cá nhân
 **Họ tên**: Bùi Anh Tuấn.  
 **Lớp**: CNTT 16-03.  
