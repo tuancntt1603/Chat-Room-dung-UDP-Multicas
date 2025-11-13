@@ -1,7 +1,6 @@
 package chat;
 
 import java.net.*;
-import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
 
 public class Receiver extends Thread {
@@ -14,20 +13,24 @@ public class Receiver extends Thread {
         this.callback = callback;
     }
 
-    public void run() {
-        byte[] buf = new byte[8192];
-        try {
-            while (running) {
-                DatagramPacket packet = new DatagramPacket(buf, buf.length);
-                socket.receive(packet);
-                String msg = new String(packet.getData(), 0, packet.getLength(), StandardCharsets.UTF_8);
-                if(callback!=null) callback.accept(msg);
-            }
-        } catch (Exception ignored) {}
-    }
-
     public void shutdown() {
         running = false;
         this.interrupt();
+    }
+
+    @Override
+    public void run() {
+        byte[] buf = new byte[65536]; // max size ~64KB
+        while(running) {
+            try {
+                DatagramPacket packet = new DatagramPacket(buf, buf.length);
+                socket.receive(packet);
+                String msg = new String(packet.getData(), 0, packet.getLength(), "UTF-8");
+                callback.accept(msg);
+            } catch(Exception e) {
+                if(running) e.printStackTrace();
+                break;
+            }
+        }
     }
 }
